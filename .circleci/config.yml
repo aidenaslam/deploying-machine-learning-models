@@ -285,12 +285,12 @@ jobs:
             ./scripts/publish_model.sh ./packages/neural_network_model/
 
 
-tags_only: &tags_only
-  filters:
-    branches:
-      ignore: /.*/
-    tags:
-      only: /^.*/
+#tags_only: &tags_only
+#  filters:
+#    branches:
+#      ignore: /.*/
+#    tags:
+#      only: /^.*/
 
 workflows:
   version: 2
@@ -306,7 +306,7 @@ workflows:
                 - master
       # upload after git tags are created
       - section_07_test_and_upload_regression_model:
-          <<: *tags_only
+ #         <<: *tags_only
       - section_08_deploy_app_container_in_heroku:
           filters:
             branches:
